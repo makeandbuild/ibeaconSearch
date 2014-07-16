@@ -86,7 +86,7 @@ extension AppDelegate: CLLocationManagerDelegate {
         inRegion region: CLBeaconRegion!) {
             let viewController:ViewController = window!.rootViewController as ViewController
             viewController.beacons = beacons as CLBeacon[]?
-            viewController.tableView.reloadData()
+            viewController.collectionView.reloadData()
             
             NSLog("didRangeBeacons");
             var message:String = ""
