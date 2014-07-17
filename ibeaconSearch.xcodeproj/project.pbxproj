@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D432AFE31978608E0071BF93 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D432AFE21978608E0071BF93 /* DetailsViewController.swift */; };
 		D4BC9F651975697800A18BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC9F641975697800A18BBB /* AppDelegate.swift */; };
 		D4BC9F671975697800A18BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC9F661975697800A18BBB /* ViewController.swift */; };
 		D4BC9F6A1975697800A18BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4BC9F681975697800A18BBB /* Main.storyboard */; };
@@ -30,9 +31,17 @@
 			remoteGlobalIDString = D4BC9F5E1975697800A18BBB;
 			remoteInfo = ibeaconSearch;
 		};
+		D4BC9F911975BE1A00A18BBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4BC9F571975697800A18BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4BC9F5E1975697800A18BBB;
+			remoteInfo = ibeaconSearch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D432AFE21978608E0071BF93 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D4BC9F5F1975697800A18BBB /* ibeaconSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibeaconSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BC9F631975697800A18BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4BC9F641975697800A18BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +97,7 @@
 			children = (
 				D4BC9F641975697800A18BBB /* AppDelegate.swift */,
 				D4BC9F661975697800A18BBB /* ViewController.swift */,
+				D432AFE21978608E0071BF93 /* DetailsViewController.swift */,
 				D4BC9F681975697800A18BBB /* Main.storyboard */,
 				D4BC9F6B1975697800A18BBB /* Images.xcassets */,
 				D4BC9F621975697800A18BBB /* Supporting Files */,
@@ -153,6 +163,7 @@
 			dependencies = (
 				D4BC9F731975697800A18BBB /* PBXTargetDependency */,
 				D4BC9F901975BE1A00A18BBB /* PBXTargetDependency */,
+				D4BC9F921975BE1A00A18BBB /* PBXTargetDependency */,
 			);
 			name = ibeaconSearchTests;
 			productName = ibeaconSearchTests;
@@ -170,6 +181,11 @@
 				TargetAttributes = {
 					D4BC9F5E1975697800A18BBB = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					D4BC9F701975697800A18BBB = {
 						CreatedOnToolsVersion = 6.0;
@@ -222,6 +238,7 @@
 			files = (
 				D4BC9F671975697800A18BBB /* ViewController.swift in Sources */,
 				D4BC9F651975697800A18BBB /* AppDelegate.swift in Sources */,
+				D432AFE31978608E0071BF93 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +262,11 @@
 			isa = PBXTargetDependency;
 			target = D4BC9F5E1975697800A18BBB /* ibeaconSearch */;
 			targetProxy = D4BC9F8F1975BE1A00A18BBB /* PBXContainerItemProxy */;
+		};
+		D4BC9F921975BE1A00A18BBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4BC9F5E1975697800A18BBB /* ibeaconSearch */;
+			targetProxy = D4BC9F911975BE1A00A18BBB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -414,6 +436,7 @@
 				D4BC9F7D1975697800A18BBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4BC9F7E1975697800A18BBB /* Build configuration list for PBXNativeTarget "ibeaconSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +445,7 @@
 				D4BC9F801975697800A18BBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
