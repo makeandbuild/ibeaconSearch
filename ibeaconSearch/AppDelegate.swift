@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
                 identifier: beaconIdentifier)
             
+            
+
+            
             locationManager = CLLocationManager()
             
             if(locationManager!.respondsToSelector("requestAlwaysAuthorization")) {
@@ -76,9 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
 extension AppDelegate: CLLocationManagerDelegate {
     func sendLocalNotificationWithMessage(message: String!) {
-        let notification:UILocalNotification = UILocalNotification()
-        notification.alertBody = message
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        let popUp:UILocalNotification = UILocalNotification()
+        popUp.alertBody = message
+        UIApplication.sharedApplication().scheduleLocalNotification(popUp)
     }
     
     func locationManager(manager: CLLocationManager!,
