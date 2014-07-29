@@ -78,10 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 }
 
 extension AppDelegate: CLLocationManagerDelegate {
-    func sendLocalNotificationWithMessage(message: String!) {
-        let popUp:UILocalNotification = UILocalNotification()
-        popUp.alertBody = message
-        UIApplication.sharedApplication().scheduleLocalNotification(popUp)
+    func beaconNotificationMessage(message: String!) {
+        let notification:UILocalNotification = UILocalNotification()
+        notification.alertBody = message
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -105,20 +105,20 @@ extension AppDelegate: CLLocationManagerDelegate {
                 
                 switch nearestBeacon.proximity {
                 case CLProximity.Far:
-                    message = "You are far away from the beacon"
+                    message = "Proximity: Far"
                 case CLProximity.Near:
-                    message = "You are near the beacon"
+                    message = "Proximity: Near"
                 case CLProximity.Immediate:
-                    message = "You are in the immediate proximity of the beacon"
+                    message = "Proximity: Immediate"
                 case CLProximity.Unknown:
                     return
                 }
             } else {
-                message = "No beacons are nearby"
+                message = "No beacons"
             }
             
             NSLog("%@", message)
-            sendLocalNotificationWithMessage(message)
+            beaconNotificationMessage(message)
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -127,7 +127,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.startUpdatingLocation()
             
             NSLog("You entered the region")
-            sendLocalNotificationWithMessage("You entered the region")
+            beaconNotificationMessage("You entered the region")
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -136,7 +136,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.stopUpdatingLocation()
             
             NSLog("You exited the region")
-            sendLocalNotificationWithMessage("You exited the region")
+            beaconNotificationMessage("You exited the region")
     }
 }
 
