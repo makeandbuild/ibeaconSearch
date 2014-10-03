@@ -11,10 +11,10 @@ import CoreLocation
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet var beaconName: UILabel
-    @IBOutlet var majorLabel: UILabel
-    @IBOutlet var minorLabel: UILabel
-    @IBOutlet var rssiLabel: UILabel
+    @IBOutlet var beaconName: UILabel?
+    @IBOutlet var majorLabel: UILabel?
+    @IBOutlet var minorLabel: UILabel?
+    @IBOutlet var rssiLabel: UILabel?
     var selectedBeacon: CLBeacon!
     
     
@@ -23,10 +23,10 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.beaconName.text = "UUID: \(selectedBeacon.proximityUUID.UUIDString)"
-         self.majorLabel.text = "Major: \(selectedBeacon.major.integerValue)"
-         self.minorLabel.text = "Minor: \(selectedBeacon.minor.integerValue)"
-         self.rssiLabel.text =  "RSSI: \(selectedBeacon.rssi as Int)"
+        self.beaconName!.text = "UUID: \(selectedBeacon.proximityUUID.UUIDString)"
+         self.majorLabel!.text = "Major: \(selectedBeacon.major.integerValue)"
+         self.minorLabel!.text = "Minor: \(selectedBeacon.minor.integerValue)"
+         self.rssiLabel!.text =  "RSSI: \(selectedBeacon.rssi as Int)"
         
     }
     

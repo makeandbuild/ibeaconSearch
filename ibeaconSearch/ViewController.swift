@@ -9,9 +9,9 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var tableView: UITableView
-    var beacons: CLBeacon[]?
+class ViewController: UIViewController, UITableViewDelegate {
+    @IBOutlet var tableView: UITableView?
+    var beacons: [CLBeacon]?
     var selectedBeaconIndex = 0
     
     override func viewDidLoad() {
@@ -23,11 +23,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-}
-
-extension ViewController: UITableViewDataSource {
     
 
     func tableView(tableView: UITableView!,
@@ -64,13 +59,13 @@ extension ViewController: UITableViewDataSource {
             }
             
     
-            cell!.textLabel.text = proximityLabel
+            cell!.textLabel?.text = proximityLabel
             
             let detailLabel:String = "Major: \(beacon.major.integerValue), " +
                 "Minor: \(beacon.minor.integerValue), " +
                 "RSSI: \(beacon.rssi as Int), " +
             "UUID: \(beacon.proximityUUID.UUIDString)"
-            cell!.detailTextLabel.text = detailLabel
+            cell!.detailTextLabel?.text = detailLabel
             
             return cell
     }
